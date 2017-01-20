@@ -83,6 +83,10 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 peer命令
 https://github.com/hyperledger/fabric/blob/master/docs/Setup/Chaincode-setup.md#option-3-docker-toolbox
 
+repst api swagger
+http://hyperledger-fabric.readthedocs.io/en/v0.6/API/CoreAPI/#rest-api
+
+peer network
 https://hyperledger-fabric.readthedocs.io/en/latest/Setup/Network-setup/
 
 /////////////////////////////////////////////////////////////////////////
