@@ -90,7 +90,12 @@ peer network
 https://hyperledger-fabric.readthedocs.io/en/latest/Setup/Network-setup/
 
 /////////////////////////////////////////////////////////////////////////
-7050: REST service listening port (Recommened to open at non-validating node)
-7051: Peer service listening port
-7052: CLI process use it for callbacks from chain code
-7053: Event service on validating node
+
+
+https://www.ibm.com/developerworks/community/blogs/8d277a63-4204-4fd3-8cb8-b7cb222cd522/entry/Steps_to_setup_Blockchain_Hyperledger_Fabric_0_6_development_environment_on_Ubuntu?lang=en
+
+7050 – REST service listeining port
+7051 – Peer service listening port
+7052 – Used by CLI for callbacks
+7053 – Event service on validating node
+7054 - Certificate Authority (CA) listening port (Member services)
