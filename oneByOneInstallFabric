@@ -90,4 +90,7 @@ peer network
 https://hyperledger-fabric.readthedocs.io/en/latest/Setup/Network-setup/
 
 /////////////////////////////////////////////////////////////////////////
-
+7050: REST service listening port (Recommened to open at non-validating node)
+7051: Peer service listening port
+7052: CLI process use it for callbacks from chain code
+7053: Event service on validating node
