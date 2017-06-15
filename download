@@ -8,6 +8,9 @@ http://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html
 cURL
 www.linuxidc.com/Linux/2014-08/106022.htm
 
+curl 不支持 https 
+blog.csdn.net/Timsley/article/details/50782742
+
 docker
 https://docs.docker.com/engine/installation/linux/ubuntu/
 
