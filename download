@@ -40,5 +40,8 @@ docker pull hyperledger/fabric-ca:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-ccenv:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-beta
 
+nodejs
+https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
+
 
 
