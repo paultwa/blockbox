@@ -22,5 +22,14 @@ https://docs.docker.com/engine/installation/linux/ubuntu/
 docker compose
 https://docs.docker.com/compose/install/
 
+docker pull hyperledger/fabric-orderer:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-peer:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-zookeeper:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-couchdb:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-kafka:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-ca:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-ccenv:x86_64-1.0.0-alpha
+docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-alpha
+
 
 
