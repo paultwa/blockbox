@@ -36,15 +36,23 @@ sudo resolvconf -u
 
 sudo /etc/init.d/networking restart 记得重新启动一个网络服务
 
-网络设置是否有效, 用ping命令确定
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //////////////////////  fabric1.0 beta项目    预装软件  /////////////////////////////
-Git client
-Go - 1.7 or later (for releases before v1.0, 1.6 or later)
-Docker - 1.12 or later
-Pip
+1. go 编译环境
+下载地址参考: https://github.com/golang/go/wiki/Ubuntu
+
+2. cURL 
+下载地址参考:　www.linuxidc.com/Linux/2014-08/106022.htm
+
+如果　curl 不支持 https 
+下载地址参考:blog.csdn.net/Timsley/article/details/50782742
+
+3. docker&docker compose
+https://docs.docker.com/engine/installation/linux/ubuntu/
+
+
 //////////////////////////////////////////////////////////////
 
 
