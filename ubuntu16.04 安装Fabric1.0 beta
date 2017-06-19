@@ -64,9 +64,7 @@ docker pull hyperledger/fabric-peer:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-zookeeper:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-couchdb:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-kafka:x86_64-1.0.0-beta
-docker pull hyperledger/fabric-ca:x86_64-1.0.0-betacd $GOPATH/src/github.com/hyperledger/fabric
-
-./network_setup.sh up
+docker pull hyperledger/fabric-ca:x86_64-1.0.0-betacd 
 docker pull hyperledger/fabric-ccenv:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-beta
 /////////////////////////////////////////////////////////////////////////////
@@ -76,7 +74,6 @@ docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-beta
 1. 首先从github 中拉取fabric 最新源码(v1.0 beta)  注意：下载之前请确定GOPATH 已经设置好
 git clone https://github.com/hyperledger/fabric.git
 
-cd $GOPATH/src/github.com/hyperledger/fabric
 
 执行下面的命令，搭建一个fabricV1.0 beta 网络，包括：6 个docker image，其中包含4 个peer 节点（peer0，peer1，peer2，
 peer3），一个order service 节点，以及一个CLI 节点用于执行命令
@@ -91,8 +88,6 @@ cd $GOPATH/src/github.com/hyperledger/fabric
 
 关闭fabricV1.0 beta 网络，　用以下命令
 ./network_setup.sh down　
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 
