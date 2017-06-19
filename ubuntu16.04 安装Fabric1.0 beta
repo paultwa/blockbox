@@ -52,8 +52,57 @@ sudo /etc/init.d/networking restart 记得重新启动一个网络服务
 3. docker&docker compose
 https://docs.docker.com/engine/installation/linux/ubuntu/
 
+4. nodejs 后期开发工具　
+https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
 
 //////////////////////////////////////////////////////////////
+
+////////////////////////////下载　最新fabricV1.0 beta docker　image文件////////
+选择网速快，网络稳定的环境下载
+docker pull hyperledger/fabric-orderer:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-peer:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-zookeeper:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-couchdb:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-kafka:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-ca:x86_64-1.0.0-betacd $GOPATH/src/github.com/hyperledger/fabric
+
+./network_setup.sh up
+docker pull hyperledger/fabric-ccenv:x86_64-1.0.0-beta
+docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-beta
+/////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////搭建 fabricV1.0 beta 网络//////// 
+1. 首先从github 中拉取fabric 最新源码(v1.0 beta)  注意：下载之前请确定GOPATH 已经设置好
+git clone https://github.com/hyperledger/fabric.git
+
+cd $GOPATH/src/github.com/hyperledger/fabric
+
+执行下面的命令，搭建一个fabricV1.0 beta 网络，包括：6 个docker image，其中包含4 个peer 节点（peer0，peer1，peer2，
+peer3），一个order service 节点，以及一个CLI 节点用于执行命令
+cd $GOPATH/src/github.com/hyperledger/fabric
+./network_setup.sh up
+
+成功标志如下：
+===================== Query on PEER3 on channel 'mychannel' is successful =====================
+===================== All GOOD, End-2-End execution completed =====================
+
+可以通过　docker ps 找到相关节点进程
+
+关闭fabricV1.0 beta 网络，　用以下命令
+./network_setup.sh down　
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+参考文档：
+
+http://hyperledger-fabric.readthedocs.io/en/latest/getting_started.html
+FabricV1.0实践（第二版）(2).pdf
 
 
     
