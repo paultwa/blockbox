@@ -3,5 +3,44 @@ Fabric1.0 beta　安装测试环境：
     2.  内存　８Ｇ
     
     
-    
+ ////////////////////////////////////////////////////////////  apt-get mirror 设置 /////////////////////////////////////
+安装软件之前先把网络设置好
+Ubuntu 14.04 的 apt-get 設定 
+
+#> sudo nano /etc/apt/sources.list
+aliyun的mirror国内最快,更新也最快   
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+
+
+#> sudo nano /etc/resolv.conf
+#google dns
+nameserver 8.8.8.8
+nameserver 8.8.4.4    
+#aliyun dns
+nameserver 223.5.5.5   
+
+一样的效果
+/etc/resolvconf/resolv.conf.d/base
+sudo resolvconf -u
+
+
+sudo /etc/init.d/networking restart 记得重新启动一个网络服务
+
+网络设置是否有效, 用ping命令确定
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
     
