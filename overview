@@ -65,6 +65,65 @@ A Member’s peer will be leveraged by end users in order to perform transaction
 
 
 
+Transaction
+Refers to an operation in which an authorized end user performs read/write operations against the ledger. 
+There are three unique types of transactions - deploy, invoke, and query.
+
+事务
+指授权的最终用户对分类账执行读/写操作的操作。有三种独特的事务类型——部署、调用和查询。
+
+
+End User
+An end user is someone who would interact with the blockchain through a set of published APIs (i.e. the hfc SDK).  
+You can have an admin user who will typically grant permissions to the Member’s components, and a client user, who, 
+upon proper authentication through the admin user, will drive chaincode applications (deploy, invoke, query) on various channels.  
+In the case of self-executing transactions, the application itself can also be thought of as the end user.
+
+最终用户
+最终用户是通过一组已发布的API交互（即HFC SDK）与区块链系统进行交互的用户。
+你可以有一个管理员用户，通常会对成员组件和客户端用户设置相应权限，客户端用户通过管理员用户授予的适当权限，执行在不同通道中链码应用（部署、调用、查询）。
+在自执行事务的情况下，应用程序本身也可以被认为是最终用户。
+
+
+Ordering Service
+A centralized or decentralized service that orders transactions in a block.  You can select different implementations of 
+the “ordering” function - e.g “solo” for simplicity and testing, Kafka for crash fault tolerance, 
+or sBFT/PBFT for byzantine fault tolerance. You can also develop your own protocol to plug into the service.
+
+事务排序服务
+一个集中或分散的服务，在一个区块内事务排序服务。你可以选择“排序”功能的不同实现如“单飞”的简单测试，卡夫卡崩溃的容错性，或完全通过sBFT/ PBFT拜占庭容错。
+您还可以开发自己的协议来植入在这服务中。
+
+
+Consensus
+A broader term overarching the entire transactional flow, which serves to generate an agreement on the order and 
+to confirm the correctness of the set of transactions constituting a block.
+
+共识
+一个更广泛的术语，用于描述整个事务流，此事务流确认构成一个块的事务集的正确性和顺序。
+
+
+Orderer
+One of the network entities that form the ordering service. A collection of ordering service nodes (OSNs) will order transactions 
+into blocks according to the network’s chosen ordering implementation. In the case of “solo”, only one OSN is required. 
+Transactions are “broadcast” to orderers, and then “delivered” as blocks to the appropriate channel.
+
+事务排序方
+形成事务排序服务的网络实体之一。事务排序服务节点集合（OSN）将事务排序成块根据网络的选择排序的实现。
+在“单例”的情况下，只有一个OSN是必需的。事务被“广播”给事务排序方，然后以区块的形式“送”到相应的通道中。
+
+
+Endorser
+A specific peer role, where the Endorser peer is responsible for simulating transactions, and in turn preventing unstable 
+or non-deterministic transactions from passing through the network.  A transaction is sent to an endorser in the form of 
+a transaction proposal.  All endorsing peers are also committing peers (i.e. they write to the ledger).
+
+背书人
+一个特定的对等点角色，背书人对等点负责仿真交易，从而防止不稳定或不确定的事务通过网络。事务被发送给在事务提案类型的背书人。
+所有背书人对等点也会提交事务（也就是他们给区块链账本写入内容）。
+
+
+
 
 
 
