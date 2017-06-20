@@ -5,3 +5,16 @@ new features:
    3.The immutable, shared ledger
    4.Chaincode execution  apart from Chaincode ordering
    5.Modularity
+   
+   
+
+   //////////////////////Fabric CA User’s Guide////////////
+   
+   It provides features such as:
+1) registration of identities, or connects to LDAP as the user registry;
+2) issuance of Enrollment Certificates (ECerts);
+3) issuance of Transaction Certificates (TCerts), providing both anonymity and unlinkability when transacting on a Hyperledger Fabric blockchain;
+4) certificate renewal and revocation.
+   
+   
+   ///////////////////////////////////////////////////
