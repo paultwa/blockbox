@@ -152,6 +152,22 @@ for validation and committal.
 
 
 
+System chain
+Contains a configuration block defining the network at a system level.
+The system chain lives within the ordering service, and similar to a channel, has an initial configuration containing information such as: root certificates for participating organizations and ordering service nodes, policies, listening address for OSN, and configuration details. Any change to the overall network (e.g. a new org joining or a new OSN being added) will result in a new configuration block being added to the system chain.
+The system chain can be thought of as the common binding for a channel or group of channels. For instance, a collection of financial institutions may form a consortium (represented through the system chain), and then proceed to create channels relative to their aligned and varying business agendas.
+
+Channel
+A Channel is formed as an offshoot of the system chain; and best thought of as a “topic” for peers to subscribe to, or rather, a subset of a broader blockchain network. A peer may subscribe on various channels and can only access the transactions on the subscribed channels.  Each channel will have a unique ledger, thus accommodating confidentiality and execution of multilateral contracts.
+
+Multi-channel
+The fabric will allow for multiple channels with a designated ledger per channel.  This capability allows for multilateral contracts where only the restricted participants on the channel will submit, endorse, order, or commit transactions on that channel.  As such, a single peer can maintain multiple ledgers without compromising privacy and confidentiality.
+
+Configuration Block
+Contains the configuration data defining members and policies for a system chain or channel(s). Any changes to the channel(s) or overall network (e.g. a new member successfully joining) will result in a new configuration block being appended to the appropriate chain.  This block will contain the contents of the genesis block, plus the delta. The policy to alter or edit a channel-level configuration block is defined through the Configuration System Chaincode (CSCC).
+
+Genesis Block
+The configuration block that initializes a blockchain network or channel, and also serves as the first block on a chain.
 
 
 
