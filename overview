@@ -124,6 +124,35 @@ a transaction proposal.  All endorsing peers are also committing peers (i.e. the
 
 
 
+Committer
+A specific peer role, where the Committing peer appends the validated transactions to the channel-specific ledger. 
+A peer can act as both an endorser and committer, but in more regulated circumstances might only serve as a committer.
+
+提交者
+一个特定的对等点角色，提交者将被验证后事务内容追加到特定通道帐本中。一个节点可以作为一个背书人和提交者，但在更加规范的情况下可能只作为一个提交者。
+
+Bootstrap
+The initial setup of a network.  There is the bootstrap of a peer network, during which policies, system chaincodes, 
+and cryptographic materials (certs) are disseminated amongst participants, and the bootstrap of an ordering network.  
+The bootstrap of the ordering network must precede the bootstrap of the peer network, as a peer network is contingent 
+upon the presence of an ordering service. A network need only be “bootstrapped” once.
+
+程序引导
+网络的初始设置。这是一个对等网络程序引导，在政策、系统链码，加密证书在所有参与者被传播的过程以及排序网络程序引导过程。排序网络的程序引导必须先于对等网络的引导，
+因为对等网络取决于事务排序服务的存在。构建网络只需要“引导”一次即可。
+
+
+Block
+A batch of ordered transactions, potentially containing ones of an invalid nature, that is delivered to the peers 
+for validation and committal.
+
+
+块
+一批有序的事务，可能含有的无效性内容的块，这些块被给相关对等点交付确认和提交。
+
+
+
+
 
 
 
