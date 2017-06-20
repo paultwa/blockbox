@@ -18,3 +18,54 @@ new features:
    
    
    ///////////////////////////////////////////////////
+   
+   
+   Hyperledger Fabric Glossary
+   
+   Blockchain Network
+A blockchain network consists of, at minimum, one peer (responsible for endorsing and committing transactions) 
+leveraging an ordering service, and a membership services component (certificate authority) 
+that distributes and revokes cryptographic certificates representative of user identities and permissions.
+
+区块链网络
+区块链网络包括，
+至少，一个对等点（负责签署和提交事务）利用一个订购服务，以及会员服务组件（证书权威），分配和撤销代表用户的身份和权限的加密证书。
+
+
+
+Permissioned Network
+
+A blockchain network where any entity (node) is required to maintain a member identity on the network. 
+End users must be authorized and authenticated in order to use the network.
+
+被许可网络
+在区块链网络中任何实体（节点）需要保持对网络成员的身份。为了使用网络，必须对终端用户进行授权和认证。
+
+
+
+Peer
+Peer is a component that executes, and maintains a ledger of, transactions.   There are two roles for a peer – endorser and committer.  
+The architecture has been designed such that a peer is always a committer, but not necessarily always an endorser. 
+Peers play no role in the ordering of transactions.
+
+对等点
+对等点是一个执行和维护帐本事务的组件。分为背书人和提交者两个角色。
+该架构的设计是这样的，一个对等点是一个提交者，但不一定是背书人。对等点在事务的排序中不起作用。
+
+
+Member
+
+A Member is a participant (such as a company or organization) that operates components - Peers, Orderers, and applications 
+- in the blockchain network.  A member is identified by its CA certificate (i.e. a unique enrollment).   
+A Member’s peer will be leveraged by end users in order to perform transaction operations on specific channels.
+
+成员
+一个成员是一个参与者（比如一个公司或组织）在区块链网络中操作各服务部件(peer orderer 和程序应用)的参与者。成员通过其CA证书（即唯一注册）来标识。
+成员的对等点将由最终用户使用，以便在特定的通道上执行事务操作。
+
+
+
+
+
+
+   
