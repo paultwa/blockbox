@@ -377,14 +377,7 @@ parties for otherwise un-linkable transactions.
 被许可的块链要求实体注册长期身份凭证（注册证书），可以根据实体类型进行区分。对于用户，注册证书授权交易证书颁发机构（TCA）颁发伪证;
 这些证书授权用户提交的交易。交易证书持续存在于块状态上，并使授权审计者能够关联和识别不可链接交易的交易方。
 
-会员服务提供商
-会员服务提供商（MSP）是指提供（匿名）凭据给系统的系统的抽象组件，以及它们的对等体参与Hyperledger / Fabric网络。客户端使用这些凭据对其事务进行身份验证，对等体使用这些凭据来验证事务处理结果（签注）。尽管与系统的事务处理组件强有力地连接，但是该接口旨在具有定义的成员服务组件，使得可以平滑地插入其中的替代实现，而不修改系统的事务处理组件的核心。
 
-初始化
-在发布部署和调用之前，在一段链码中定义资产和参数的链码方法。顾名思义，该函数应该用于对链码进行任何初始化，例如在分类帐上配置键/值对的初始状态。
-
-appshim
-o使用的应用程序客户端
 
 
 Membership Service Provider
@@ -395,18 +388,36 @@ the transaction processing components of the systems, this interface aims to hav
 in such a way that alternate implementations of this can be smoothly plugged in without modifying the core of transaction processing 
 components of the system.
 
+
+会员服务提供商
+会员服务提供商（MSP）是指提供（匿名）凭据给客户端的系统抽象组件，对等点为客户端参与超级帐本网络。
+客户端使用这些凭据对其事务进行身份验证，对等点使用这些凭据来验证事务处理结果（背书认可）。尽管与系统事务处理组件进行强连接，
+但是该接口目标是定义成员服务组件，因此我们可以用其他替代实现，平滑地插入其中，而不修改系统的事务处理组件的核心。(可二次开发接口实现)
+
+
+
 Initialize
 A chaincode method to define the assets and parameters in a piece of chaincode prior to issuing deploys and invocations.  
 As the name implies, this function should be used to do any initialization to the chaincode, such as configure the initial state 
 of a key/value pair on the ledger.
+
+初始化
+在发布部署和调用之前，在一段链码中定义资产和参数的链码方法。顾名思义，该函数应该用于对链码进行任何初始化，例如在帐本上配置键/值对的初始状态。
+
 
 appshim
 An application client used by ordering service nodes to process “broadcast” messages arriving from clients or peers. This shim allows 
 the ordering service to perform membership-related functionality checks. In other words, is a peer or client properly authorized to 
 perform the requested function (e.g. upgrade chaincode or reconfigure channel settings).
 
+
+这是应用客户机，被用户通过排序服务节点来处理从来处理客户端或对等端广播消息。 这个代码片断允许排序服务执行与会员相关的功能检查。 
+换句话说，应用客户机是正确授权的对等点或客户端执行所请求的功能（例如升级链码或重新配置频道设置）。
+
 osshim
 An ordering service client used by the application to process ordering service messages (i.e. “deliver” messages) that are advertised 
 within a channel.
+
+排序服务客户端，应用程序用此客户端来处理在通道内广播的排序服务消息（即提交消息）。
 
 
