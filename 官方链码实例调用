@@ -23,16 +23,35 @@ FabricV1.0官方链码实例调用
 ////////////////////////////////////////////////////////////////
 
 ///////////////////////////map 调用//////////////////
-此实例主要实现如下的功能： 模拟一个map数据模型
+此实例主要实现如下的功能： 
+   1.模拟一个map数据模型
+   2. 调用put/remove/get/keys/query/history函数
+   
 
+peer chaincode install -n mymap -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/map
 
+peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+      --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+      -C mychannel -n  mymap -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/map
+      -c '{"Args":["init"]}' 
+      -P "OR ('Org1MSP.member','Org2MSP.member')"
+
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+      --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+      -C mychannel -n mymap -c '{"Args":["put","a","10"]}'
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////passthru 调用//////////////////
 
+此实例主要实现如下的功能： 
+   调用其它链码,实现透传功能
+
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////sleeper 调用//////////////////
+
+此实例主要实现如下的功能： 
+    定时休眠功能
 
 /////////////////////////////////////////////////////////////////////////////
 
