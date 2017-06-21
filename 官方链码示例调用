@@ -161,6 +161,21 @@ peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED
       -C mychannel -n mymap -c '{"Args":["put","a","10"]}'
 /////////////////////////////////////////////////////////////////////////////
 
+///////////////////////////背书规则验证////////////////////////////////////////////
+背书规则的详细介绍请参阅：
+http://hyperledger-fabric.readthedocs.io/en/latest/endorsement-policies/
+
+如果将初始化链码的命令中参数 
+"OR ('Org1MSP.member','Org2MSP.member')" 
+改成
+"And ('Org0MSP.member, Org1MSP.member')"
+"And ('Org1MSP.member')"
+
+交易提交的时候，将有不同的结果
+///////////////////////////////////////////////////////////////////////
+
+
+
 ///////////////////////////passthru 调用//////////////////
 此示例主要实现如下的功能： 
    调用其它链码,实现透传功能
@@ -207,6 +222,14 @@ UTXO示例链码包含一个名为execute的调用函数。该函数接受来自
 ///////////////////////////////////////////////////////////////////////
 
 
+
+
+/////////////////// 下载fabric-samples 示例程序 ///////////////////////////
+
+git clone https://github.com/hyperledger/fabric-samples.git
+在fabric-examples目录下有两个自动化部署脚本first-network.sh, basic-network.sh. 可以部署不同组件节点的区块链网络
+
+/////////////////////////////////////////////////
 
 
 参考文档:
