@@ -1,12 +1,12 @@
 
 
-FabricV1.0官方链码实例调用
+FabricV1.0官方链码示例调用
 
 //////////////////////////////////////////////////////////////////////
-实例路径:
+示例路径:
     $GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/go
 
-路径下包括如下实例:
+路径下包括如下示例:
     chaincode_example01
     chaincode_example02
     chaincode_example03
@@ -24,7 +24,7 @@ FabricV1.0官方链码实例调用
 
 
 ///////////////////////////chaincode_example01 02 03 04 05 调用//////////////////
-此实例主要实现如下的功能：
+此示例主要实现如下的功能：
 
 1. 初始化 A、B 两个账户，并为两个账户赋初始资产值；
 2. 在 A、B 两个账户之间进行资产交易；
@@ -33,9 +33,9 @@ FabricV1.0官方链码实例调用
 
 官方提供的自动化部署脚本network_setup.sh中，已经包含了启动Fabric实例chaincode_example02的脚本
 network_setup.sh会执行以下前两条命令:
-1. 安装chaincode_example02实例
+1. 安装chaincode_example02示例
 peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example
-2. 初始化chaincode_example02实例
+2. 初始化chaincode_example02示例
 peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
       --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
       -C mychannel -n  mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 
@@ -43,12 +43,12 @@ peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENAB
       -P "OR ('Org1MSP.member','Org2MSP.member')"
 
 
-3. 初始化chaincode_example02实例成功后，就可以a,b两个账户之间进行资产交易. 例如: 把a账户的10元转给b账户，调用invoke命令：
+3. 初始化chaincode_example02示例成功后，就可以a,b两个账户之间进行资产交易. 例如: 把a账户的10元转给b账户，调用invoke命令：
 peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
       --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
       -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}'
 
-3. 初始化chaincode_example02实例成功后，就分别查询a,b两个账户上的余额. 例如:调用query命令来查一下b账户的余额，如果没有计算错，应该是210元。
+3. 初始化chaincode_example02示例成功后，就分别查询a,b两个账户上的余额. 例如:调用query命令来查一下b账户的余额，如果没有计算错，应该是210元。
 peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
 
 ////////////////////////////////////////////////////////
@@ -56,15 +56,15 @@ peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
 
 
 /////////////////////////////marbles chaincode 安装调用///////////////////////////////////////
-此实例主要实现如下的功能：
+此示例主要实现如下的功能：
       构建一个大理石交易平台
 
 
 
-1. 安装marbles02实例
+1. 安装marbles02示例
 peer chaincode install -o orderer.example.com:7050 -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02
 
-2.初始化marbles02实例和背书规则
+2.初始化marbles02示例和背书规则
 peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
         --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
          -C mychannel -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02 
@@ -162,12 +162,12 @@ peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////passthru 调用//////////////////
-此实例主要实现如下的功能： 
+此示例主要实现如下的功能： 
    调用其它链码,实现透传功能
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////sleeper 调用//////////////////
-此实例主要实现如下的功能： 
+此示例主要实现如下的功能： 
     定时休眠功能
 /////////////////////////////////////////////////////////////////////////////
 
@@ -175,7 +175,7 @@ peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED
 
 UTXO链码
 
-UTXO实例链码包含一个名为execute的调用函数。该函数接受来自Bitcoin网络的BASE64编码的事务。此链码将解析事务，
+UTXO示例链码包含一个名为execute的调用函数。该函数接受来自Bitcoin网络的BASE64编码的事务。此链码将解析事务，
 并将事务组件传递到Bitcoin libconsensus C库以进行脚本验证。
 
 这个链码的目的是为了
