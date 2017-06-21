@@ -154,34 +154,58 @@ for validation and committal.
 
 System chain
 Contains a configuration block defining the network at a system level.
-The system chain lives within the ordering service, and similar to a channel, has an initial configuration containing information such as: root certificates for participating organizations and ordering service nodes, policies, listening address for OSN, and configuration details. Any change to the overall network (e.g. a new org joining or a new OSN being added) will result in a new configuration block being added to the system chain.
-The system chain can be thought of as the common binding for a channel or group of channels. For instance, a collection of financial institutions may form a consortium (represented through the system chain), and then proceed to create channels relative to their aligned and varying business agendas.
-
-Channel
-A Channel is formed as an offshoot of the system chain; and best thought of as a “topic” for peers to subscribe to, or rather, a subset of a broader blockchain network. A peer may subscribe on various channels and can only access the transactions on the subscribed channels.  Each channel will have a unique ledger, thus accommodating confidentiality and execution of multilateral contracts.
-
-Multi-channel
-The fabric will allow for multiple channels with a designated ledger per channel.  This capability allows for multilateral contracts where only the restricted participants on the channel will submit, endorse, order, or commit transactions on that channel.  As such, a single peer can maintain multiple ledgers without compromising privacy and confidentiality.
+The system chain lives within the ordering service, and similar to a channel, has an initial configuration containing information 
+such as: root certificates for participating organizations and ordering service nodes, policies, listening address for OSN, 
+and configuration details. Any change to the overall network (e.g. a new org joining or a new OSN being added) will result in 
+a new configuration block being added to the system chain.
+The system chain can be thought of as the common binding for a channel or group of channels. For instance, a collection 
+of financial institutions may form a consortium (represented through the system chain), and then proceed to create channels 
+relative to their aligned and varying business agendas.
 
 系统链
 包含在系统级别定义网络的配置块。
-系统链内的订购服务的生活，和一个类似的通道，已包含的信息如初始配置：参与组织和订购服务节点，根证书政策，听地址OSN，和配置细节。对整体网络的任何变化（例如一个新的机构加入或添加新的OSN）将导致一个新的配置块被添加到系统链。
-系统链可以看作是一个信道或一组信道的公共绑定。例如，金融机构的集合可以形成一个财团（通过系统链来代表），然后着手建立与其对齐的和不同的业务议程相关的渠道。
+系统链包括事务排序服务和一个类似的通道，它包含的信息如初始配置：参与组织和事务排序服务节点的根证书和政策，OSN监听地址和配置细节。
+对整体网络的任何变化（例如一个新的机构加入或添加新的OSN）将导致一个新的配置块被添加到系统链。
+系统链可以看作是一个通道或一组通道的公共绑定。例如，金融机构的集合可以形成一个财团（通过系统链来代表），
+然后着手建立与其对齐的和不同的业务议程相关的渠道。
+
+
+Channel
+A Channel is formed as an offshoot of the system chain; and best thought of as a “topic” for peers to subscribe to, or rather, 
+a subset of a broader blockchain network. A peer may subscribe on various channels and can only access the transactions 
+on the subscribed channels.  Each channel will have a unique ledger, thus accommodating confidentiality and execution 
+of multilateral contracts.
 通道
-一个渠道是作为系统的一个分支，链；最好的思想作为一个“话题”的同龄人订阅，或者说，一个更广泛的blockchain网络的一个子集。对等点可以订阅各种信道，只能访问已订阅信道上的事务。每个通道将有一个独特的分类账，从而便于保密和执行多边合同。
+一个通道是作为系统链的一个分支链；一个通道最好作为一个对等点订阅的主题，或者说，一个更广泛的区块链网络的一个子集。
+对等点可以订阅各种通道，对等点只能访问已订阅通道上的事务。每个通道将有一个独特的账本，从而便于保密和执行多边合同。
+
+
+Multi-channel
+The fabric will allow for multiple channels with a designated ledger per channel.  This capability allows for multilateral contracts
+where only the restricted participants on the channel will submit, endorse, order, or commit transactions on that channel.  
+As such, a single peer can maintain multiple ledgers without compromising privacy and confidentiality.
+
 多通道
-该织物将允许多个频道，每个频道有指定的分类帐。此能力允许多边合同，只有通道上的受限制参与者将提交、认可、订购或提交该通道上的事务。例如，一个节点可以在不牺牲隐私和机密维护多个分类帐。
-配置块
-包含定义系统链或通道的成员和策略的配置数据。对通道或整体网络的任何更改（例如新成员成功加入）将导致一个新的配置块被附加到适当的链上。这一块将包含创世纪块的内容，加上三角洲。改变或编辑通道水平配置块的政策是通过配置系统码定义（CSCC）。
-创世记块
-配置块初始化blockchain网络或渠道，并作为链条上的第一块。
+Fabric项目将允许多个频道，每个频道有指定的帐本。此能力允许多边合同，只有通道上的受限制参与者将提交、认可、排序或提交该通道上的事务。
+例如，一个节点可以在不牺牲隐私和机密维护多个帐本。
+
 
 Configuration Block
-Contains the configuration data defining members and policies for a system chain or channel(s). Any changes to the channel(s) or overall network (e.g. a new member successfully joining) will result in a new configuration block being appended to the appropriate chain.  This block will contain the contents of the genesis block, plus the delta. The policy to alter or edit a channel-level configuration block is defined through the Configuration System Chaincode (CSCC).
+Contains the configuration data defining members and policies for a system chain or channel(s). Any changes to the channel(s) 
+or overall network (e.g. a new member successfully joining) will result in a new configuration block being appended to 
+the appropriate chain.  This block will contain the contents of the genesis block, plus the delta. The policy to alter 
+or edit a channel-level configuration block is defined through the Configuration System Chaincode (CSCC).
+
+配置块
+系统链或通道中定义成员和策略的配置数据。对通道或整体网络的任何更改（例如新成员成功加入）将导致一个新的配置块被追加到适当的链上。
+这一块将包含创世纪块的内容，加上三角洲。通过配置系统信息链码（CSCC）定义了一个改变或编辑通道水平配置块的政策。
+
 
 Genesis Block
 The configuration block that initializes a blockchain network or channel, and also serves as the first block on a chain.
 
+创世记块
+配置块初始化区块链网络或通道，并作为链条上的第一块。
 
 
 
