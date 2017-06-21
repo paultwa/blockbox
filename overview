@@ -208,5 +208,32 @@ The configuration block that initializes a blockchain network or channel, and al
 配置块初始化区块链网络或通道，并作为链条上的第一块。
 
 
+Ledger
+An append-only transaction log managed by peers.  Ledger keeps the log of ordered transaction batches. 
+There are two denotations for ledger; peer and validated. The peer ledger contains all batched transactions 
+coming out of the ordering service, some of which may in fact be invalid. The validated ledger will contain 
+fully endorsed and validated transaction blocks. In other words, transactions in the validated ledger have passed 
+the entire gamut of “consensus” - i.e. they have been endorsed, ordered, and validated.
 
+帐本
+由对等点管理追加事务日志。帐本保留有序交易批次的日志。帐本有两个含义;被验证和对等点。对等点帐本包含从排序服务中出来的所有批量事务，
+其中一些上可能无效。验证的帐本将包含完全认可和验证的交易块。换句话说，被验证的帐中的交易已经通过了“共识”的全部检查 - 即已被认可，排序和验证。
+
+
+Dynamic membership
+The fabric will allow for endorsers and committers to come and go based on membership, and the blockchain network will 
+continue to operate. Dynamic membership is critical when businesses grow and members need to be added or removed for various reasons.
+
+
+动态会员资格
+Fabric项目的架构将允许背书人和提交者根据成员资格进行交往，并且区块链网络将持续管理这种成员资格。动态会员资格对于企业发展至关重要，
+而成员需要由于各种原因被添加或删除。
+
+
+Query/Non-Key Value Query
+using couchDB 2.0 you now have the capability to leverage an API to perform more complex queries against combinations of variables, 
+including time ranges, transaction types, users, etc.  This feature allows for auditors and regulators to aggregate and mine large 
+chunks of data.
    
+查询/非键值查询
+使用couchDB 2.0，您现在可以利用API对变量组合执行更复杂的查询，包括时间范围，交易类型，用户等。此功能允许审计者和监管机构聚合和挖掘分析大量数据。
