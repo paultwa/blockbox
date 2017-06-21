@@ -57,39 +57,81 @@ peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
 
 
 
+/////////////////////////////marbles chaincode 安装调用///////////////////////////////////////
+1. 安装marbles02实例
+peer chaincode install -o orderer.example.com:7050 -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02
+
+2.初始化marbles02实例和背书规则
+peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+        --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+         -C mychannel -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02 
+         -c '{"Args":["init"]}' 
+         -P "OR ('Org0MSP.member','Org1MSP.member')"
 
 
-peer chaincode install -o orderer.example.com:7050 -n marbles -v 1.0 -p
-github.com/hyperledger/fabric/examples/chaincode/go/marbles02
-
-peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -v 1.0 -p
-github.com/hyperledger/fabric/examples/chaincode/go/marbles02 -c '{"Args":["init"]}' -P "OR
-('Org0MSP.member','Org1MSP.member')"
+3.调用marbles02链码,生成一些基本交易数据
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+        --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+        -C mychannel -n marbles 
+        -c '{"Args":["initMarble","marble1","blue","35","tom"]}'
 
 
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["initMarble","marble1","blue","35","tom"]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+        --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+        -C mychannel -n marbles 
+        -c '{"Args":["initMarble","marble2","red","50","tom"]}'
 
 
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["initMarble","marble2","red","50","tom"]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+        --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+        -C mychannel -n marbles 
+        -c '{"Args":["initMarble","marble3","blue","70","tom"]}'
+
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+         --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+         -C mychannel -n marbles 
+         -c '{"Args":["transferMarble","marble2","jerry"]}'
+
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+           --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+           -C mychannel -n marbles 
+           -c '{"Args":["transferMarblesBasedOnColor","blue","jerry"]}'
 
 
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["initMarble","marble3","blue","70","tom"]}'
-
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["transferMarble","marble2","jerry"]}'
-
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["transferMarblesBasedOnColor","blue","jerry"]}'
-
-
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile
-/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n marbles -c '{"Args":["delete","marble1"]}'
-
-http://localhost:5984/_utils
-
-
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+            --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+            -C mychannel -n marbles 
+            -c '{"Args":["delete","marble1"]}'
+            
+            
+            
+            
+执行查询marbles2的记录命令:
 peer chaincode query -C mychannel -n marbles -c '{"Args":["readMarble","marble2"]}'
+
+返回结果如下
+Query Result: {"color":"red","docType":"marble","name":"marble2","owner":"jerry","size":50}
+
+查询marble1的历史数据
+peer chaincode query -C mychannel -n marbles -c '{"Args":["getHistoryForMarble","marble1"]}'
+返回结果如下
+Query Result: [{"TxId":"1c3d3caf124c89f91a4c0f353723ac736c58155325f02890adebaa15e16e6464",
+"Value":{"docType":"marble","name":"marble1","color":"blue","size":35,"owner":"tom"}},{"TxId":"755d55
+c281889eaeebf405586f9e25d71d36eb3d35420af833a20a2f53a3eefd",
+"Value":{"docType":"marble","name":"marble1","color":"blue","size":35,"owner":"jerry"}},{"TxId":"819451
+032d813dde6247f85e56a89262555e04f14788ee33e28b232eef36d98f", "Value":}]
+
+复杂查询所有属于jerry 的marble
+peer chaincode query -C mychannel -n marbles -c '{"Args":["queryMarblesByOwner","jerry"]}'
+
+返回结果如下
+Query Result: [{"Key":"marble2",
+"Record":{"color":"red","docType":"marble","name":"marble2","owner":"jerry","size":50}},{"Key":"marble
+3", "Record":{"color":"blue","docType":"marble","name":"marble3","owner":"jerry","size":70}}]
+
+通过Owener 属性查询marble，value为jerry
+peer chaincode query -C mychannel -n marbles -c'{"Args":["queryMarbles","{\"selector\":{\"owner\":\"jerry\"}}"]}'
+返回结果如下
+Query Result: [{"Key":"marble2","Record":{"color":"red","docType":"marble","name":"marble2","owner":"jerry","size":50}},
+{"Key":"marble3", "Record":{"color":"blue","docType":"marble","name":"marble3","owner":"jerry","size":70}}]
+
