@@ -213,4 +213,5 @@ UTXO示例链码包含一个名为execute的调用函数。该函数接受来自
     1. FabricV1.0实践（第二版）(2).pdf
     2. hyperledger-fabric.pdf
     3. http://hyperledger-fabric.readthedocs.io/en/stable/Setup/JAVAChaincode/
+    4. http://scyuan.info/2016/08/26/blockchain-2.html
      
