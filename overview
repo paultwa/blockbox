@@ -284,41 +284,8 @@ of user chaincodes both require a corresponding ESCC, which is defined at the ti
 for the user chaincode.
 
 认可系统链码
-认可系统链码（ESCC）是一种系统链码，用于对部署在网络上的特定链码进行认可策略，并定义交易建议以获得成功的提案响应所需的参数（来自认可对等体的百分比或签名的组合） （即认可）。用户链码的部署和调用都需要相应的ESCC，ESCC在用户链码的部署事务提议时被定义。
-
-验证系统链码
-验证系统链码（VSCC）处理部署在网络上的特定链码的验证策略。用户链码的部署和调用都需要相应的VSCC，它在用户链码的部署事务建议时定义。 VSCC验证指定级别的“认可”（即认可政策），以防止客户端的恶意或错误行为。
-
-政策
-有批准，验证，封锁提交，链码管理和网络/频道管理的政策。策略是通过系统链码定义的，并包含网络操作成功的必要规范。例如，认可政策可能要求100％的支持者在交易模拟时获得相同的结果。
-
-认可政策
-块链网络必须制定管理拟议的模拟交易的（或不）批准的规则。这种认可政策可能要求交易由最少数量的认可对等方，认可对等方的最小百分比或分配给特定链码应用程序的所有认可对等方认可。政策可以根据应用程序进行策划，也可以通过认可的同行来预防不当行为的弹性（有意或不慎）。还需要一个明确的支持部署交易代理策略，安装新的链码。
-
-提案
-从客户端或管理员用户发送到网络中的一个或多个对等体的事务请求;示例包括部署，调用，查询或配置请求。
-
-部署
-指的是在链上部署链码应用程序的功能。首先以提案的形式将部署从客户端SDK或CLI发送到生命周期系统链码。
-
-调用
-用于调用链码功能。调用被作为交易提案捕获，然后通过批准，排序，验证，提交的模块化流程。 invoke的结构是一个函数和数组的参数。
-
-会员服务
-会员服务管理被许可的块链网络上的用户身份;此功能通过fabric-ca组件实现。 fabric-ca由客户端和服务器组成，并处理用于识别和认证网络用户的注册资料（证书）的分发和撤销。
-
-在线MembershipSrvc代码（MSP）在对等体本身运行，并且在对事务处理结果进行身份验证时由对等体使用，并由客户端验证/验证事务。会员服务通过组合公钥基础设施（PKI）和权力下放（协商一致）来区分角色。相比之下，未经许可的网络不提供会员特定权限或角色的区别。
-
-被许可的块链要求实体注册长期身份凭证（注册证书），可以根据实体类型进行区分。对于用户，注册证书授权交易证书颁发机构（TCA）颁发伪证;这些证书授权用户提交的交易。交易证书持续存在于块状态上，并使授权审计师能够关联并识别交易方以进行其他不可链接交易。
-
-会员服务提供商
-会员服务提供商（MSP）是指提供（匿名）凭据给系统的系统的抽象组件，以及它们的对等体参与Hyperledger / Fabric网络。客户端使用这些凭据对其事务进行身份验证，对等体使用这些凭据来验证事务处理结果（签注）。尽管与系统的事务处理组件强有力地连接，但是该接口旨在具有定义的成员服务组件，使得可以平滑地插入其中的替代实现，而不修改系统的事务处理组件的核心。
-
-初始化
-在发布部署和调用之前，在一段链码中定义资产和参数的链码方法。顾名思义，该函数应该用于对链码进行任何初始化，例如在分类帐上配置键/值对的初始状态。
-
-appshim
-o使用的应用程序客户端
+认可系统链码（ESCC）是一种系统链码，用于对部署在网络上的特定链码进行认可策略，并定义了获得成功的提案响应所需的参数（认可对等点的百分比或签名组合）
+的交易方案。用户链码的部署和调用都需要相应的ESCC，ESCC在用户链码的部署事务提议时被定义。
 
 Validation System Chaincode
 Validation System Chaincode (VSCC) Handles the validation policy for specific pieces of chaincode deployed on a network.  
@@ -326,10 +293,21 @@ Deployments and invocations of user chaincodes both require a corresponding VSCC
 the deployment transaction proposal for the user chaincode. VSCC validates the specified level of “endorsement” 
 (i.e. endorsement policy) in order to prevent malicious or faulty behavior from the client.
 
+
+验证系统链码
+验证系统链码（VSCC）处理部署在网络上的特定链码的验证策略。用户链码的部署和调用都需要相应的VSCC，它在用户链码的部署事务提议时定义。 
+VSCC验证指定级别的“认可”（即认可政策），以防止客户端的恶意或错误行为。
+
 Policy
 There are policies for endorsement, validation, block committal, chaincode management and network/channel management.  
 Policies are defined through system chaincodes, and contain the requisite specifications for a network action to succeed.  
 For example, an endorsement policy may require that 100% of endorsers achieve the same result upon transaction simulation.
+
+政策
+有认可，验证，块提交，链码管理和网络/频道管理的政策。策略是通过系统链码定义的，并包含网络操作成功的必要规范。
+例如，认可政策可能要求100％的背书者在交易模拟时获得相同的结果。
+
+
 
 Endorsement policy
 A blockchain network must establish rules that govern the endorsement (or not) of proposed, simulated transactions. 
@@ -338,17 +316,39 @@ a minimum percentage of endorsing peers, or by all endorsing peers that are assi
 Policies can be curated based on the application and the desired level of resilience against misbehavior (deliberate or not) 
 by the endorsing peers. A distinct endorsement policy for deploy transactions, which install new chaincode, is also required.
 
+认可政策
+块链网络必须制定管理拟议的模拟交易的（或不）批准的规则。这种认可政策可能要求交易被认可的最少背书节点数，
+或者背书节点的最小百分比，或所有背书节点认可。政策可以根据应用程序进行设定，也可以通过背书节点来预防不当行为（有意或不慎）的理想的弹性恢复参数。
+还需要一个支持安装新链码部署交易的不同认可策略。
+
+
+
+
 Proposal
 A transaction request sent from a client or admin user to one or more peers in a network; examples include deploy, invoke, query, 
 or configuration request.
+
+请求
+从客户端或管理员用户发送到网络中的一个或多个对等点的事务请求;例如: 包括部署，调用，查询或配置请求。
+
+
 
 Deploy
 Refers to the function through which chaincode applications are deployed on chain. A deploy is first sent from the client SDK 
 or CLI to a Lifecycle System Chaincode in the form of a proposal.
 
+部署
+指的是在链上部署链码应用程序的功能。首先以提案的形式将一个链码部署请求从客户端SDK或CLI发送到生命周期系统链码中。
+
+
+
 Invoke
 Used to call chaincode functions.  Invocations are captured as transaction proposals, which then pass through a modular flow of 
 endorsement, ordering, validation, committal.  The structure of invoke is a function and an array of arguments.
+
+调用
+用于调用链码功能。调用被作为交易请求被捕获，然后通过认可，排序，验证，提交的模块化流程。 invoke的结构是一个函数和参数数组。
+
 
 Membership Services
 Membership Services manages user identities on a permissioned blockchain network; this function is implemented through 
@@ -365,6 +365,27 @@ which can be distinguished according to entity type. For users, an Enrollment Ce
 Authority (TCA) to issue pseudonymous credentials; these certificates authorize transactions submitted by the user. 
 Transaction certificates persist on the blockchain, and enable authorized auditors to associate, and identify the transacting 
 parties for otherwise un-linkable transactions.
+
+
+会员服务
+会员服务管理被许可的区块链网络上的用户身份;此功能通过fabric-ca组件实现。 fabric-ca由客户端和服务器组成，
+并处理用于识别和认证网络用户的注册资料（证书）的分发和撤销。
+
+内嵌MembershipSrvc代码（MSP）在对等点本身运行，在进行身份验证事务处理结果时由对等点使用，并由客户端验证/认证事务。会员服务通过组合公钥基础设施
+（PKI）和去中心化的共识机制来区分角色。相比之下，未经许可的网络不提供会员特定权限或角色的区别。
+
+被许可的块链要求实体注册长期身份凭证（注册证书），可以根据实体类型进行区分。对于用户，注册证书授权交易证书颁发机构（TCA）颁发伪证;
+这些证书授权用户提交的交易。交易证书持续存在于块状态上，并使授权审计者能够关联和识别不可链接交易的交易方。
+
+会员服务提供商
+会员服务提供商（MSP）是指提供（匿名）凭据给系统的系统的抽象组件，以及它们的对等体参与Hyperledger / Fabric网络。客户端使用这些凭据对其事务进行身份验证，对等体使用这些凭据来验证事务处理结果（签注）。尽管与系统的事务处理组件强有力地连接，但是该接口旨在具有定义的成员服务组件，使得可以平滑地插入其中的替代实现，而不修改系统的事务处理组件的核心。
+
+初始化
+在发布部署和调用之前，在一段链码中定义资产和参数的链码方法。顾名思义，该函数应该用于对链码进行任何初始化，例如在分类帐上配置键/值对的初始状态。
+
+appshim
+o使用的应用程序客户端
+
 
 Membership Service Provider
 The Membership Service Provider (MSP) refers to an abstract component of the system that provides (anonymous) credentials to clients, 
