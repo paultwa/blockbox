@@ -58,6 +58,11 @@ peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
 
 
 /////////////////////////////marbles chaincode 安装调用///////////////////////////////////////
+此实例主要实现如下的功能：
+      构建一个大理石交易平台
+
+
+
 1. 安装marbles02实例
 peer chaincode install -o orderer.example.com:7050 -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02
 
@@ -134,4 +139,6 @@ peer chaincode query -C mychannel -n marbles -c'{"Args":["queryMarbles","{\"sele
 返回结果如下
 Query Result: [{"Key":"marble2","Record":{"color":"red","docType":"marble","name":"marble2","owner":"jerry","size":50}},
 {"Key":"marble3", "Record":{"color":"blue","docType":"marble","name":"marble3","owner":"jerry","size":70}}]
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
