@@ -2,21 +2,64 @@
 
 FabricV1.0官方链码实例调用
 
+//////////////////////////////////////////////////////////////////////
 实例路径:
     $GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/go
 
+路径下包括如下实例:
+    chaincode_example01
+    chaincode_example02
+    chaincode_example03
+    chaincode_example04
+    chaincode_example05
+    eventsender
+    invokereturnsvalue
+    map 
+    marbles02
+    passthru
+    sleeper
+    utxo
+
+////////////////////////////////////////////////////////////////
 
 
-/////////////////////////////////////////////
-peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02
 
-peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n  mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Args":["init","a","100","b","200"]}' -P "OR ('Org1MSP.member','Org2MSP.member')"
 
-peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}'
+///////////////////////////chaincode_example01 02 03 04 05 调用//////////////////
+此实例主要实现如下的功能：
 
+1. 初始化 A、B 两个账户，并为两个账户赋初始资产值；
+2. 在 A、B 两个账户之间进行资产交易；
+3. 分别查询 A、B 两个账户上的余额，确认交易成功；
+4. 删除账户。
+
+官方提供的自动化部署脚本network_setup.sh中，已经包含了启动Fabric实例chaincode_example02的脚本
+network_setup.sh会执行以下前两条命令:
+1. 安装chaincode_example02实例
+peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example
+2. 初始化chaincode_example02实例
+peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+      --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+      -C mychannel -n  mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 
+      -c '{"Args":["init","a","100","b","200"]}' 
+      -P "OR ('Org1MSP.member','Org2MSP.member')"
+
+
+3. 初始化chaincode_example02实例成功后，就可以a,b两个账户之间进行资产交易.
+peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
+      --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
+      -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}'
+
+3. 初始化chaincode_example02实例成功后，就分别查询a,b两个账户上的余额.
+peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'
 
 peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
+
 ////////////////////////////////////////////////////////
+
+
+
+
 
 peer chaincode install -o orderer.example.com:7050 -n marbles -v 1.0 -p
 github.com/hyperledger/fabric/examples/chaincode/go/marbles02
