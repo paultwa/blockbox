@@ -45,14 +45,12 @@ peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENAB
       -P "OR ('Org1MSP.member','Org2MSP.member')"
 
 
-3. 初始化chaincode_example02实例成功后，就可以a,b两个账户之间进行资产交易.
+3. 初始化chaincode_example02实例成功后，就可以a,b两个账户之间进行资产交易. 例如: 把a账户的10元转给b账户，调用invoke命令：
 peer chaincode invoke -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED 
       --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/cacerts/ca.example.com-cert.pem 
       -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}'
 
-3. 初始化chaincode_example02实例成功后，就分别查询a,b两个账户上的余额.
-peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'
-
+3. 初始化chaincode_example02实例成功后，就分别查询a,b两个账户上的余额. 例如:调用query命令来查一下b账户的余额，如果没有计算错，应该是210元。
 peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
 
 ////////////////////////////////////////////////////////
