@@ -186,3 +186,31 @@ UTXO示例链码包含一个名为execute的调用函数。该函数接受来自
 
 /////////////////////////////////////////////////////////////////////////////
 
+
+
+//////////////////////////////////java 链码调用/////////////////////////////////////
+
+
+1.部署java 链码程序
+    peer chaincode deploy -l java -p $GOPATH/src/github.com/hyperledger/fabric/examples/chaincode/java/SimpleSample 
+    -c '{"Args": ["init", "a","100", "b", "200"]}'
+
+2.调用java 链码程序
+    peer chaincode invoke -l java -n 6d9a704d95284593fe802a5de89f84e86fb975f00830bc6488713f9441b835cf32d9cd07b087b90e5cb57a88360f90a4de39521a5595545ad689cd64791679e9
+    -c '{"Args": ["transfer", "a", "b", "10"]}'
+
+3. 查询命令
+   peer chaincode query -l java 
+        -n 6d9a704d95284593fe802a5de89f84e86fb975f00830bc6488713f9441b835cf32d9cd07b087b90e5cb57a88360f90a4de39521a5595545ad689cd64791679e9 
+        -c '{ "Args": ["query", "a"]}'
+    
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+参考文档:
+    1. FabricV1.0实践（第二版）(2).pdf
+    2. hyperledger-fabric.pdf
+    3. http://hyperledger-fabric.readthedocs.io/en/stable/Setup/JAVAChaincode/
+     
