@@ -1,5 +1,8 @@
 # blockbox
 
+GPG error: https://packagecloud.io trusty InRelease NO_PUBKEY 37BBEE3F7AD95B3F
+
+
 tyk安装
 
  tyk2.3  ubuntu16.04
