@@ -1,5 +1,16 @@
 # blockbox
 
+Downloading the SAP Java Connector
+
+Before you can use the SAP Java Connector for Sterling B2B Integrator, you must first download the files for it.
+About this task
+Follow these steps to download the files that are needed to use the SAP Java Connector.
+Procedure
+
+    On the same computer where Sterling B2B Integrator is installed, download the free SAP JCo from the SAP Service Marketplace website at https://websmp101.sap-ag.de/.
+    Log in to the SAP Service Marketplace and access the SAP JCo download software from http://service.sap.com/connectors. If necessary, select the Tools & Services page to display the download page. 
+
+
 
 
 https://play.google.com/apps/publish/?dev_acc=13980069071725628395#FinanceOverviewPlace:p=com.autosoft.cloud
