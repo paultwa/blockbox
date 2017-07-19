@@ -1,6 +1,112 @@
 # blockbox
 
 
+
+
+
+什么是JSON Web令牌？
+
+JSON Web令牌（JWT）是一种开放标准（RFC 7519），它定义了一种紧凑且独立的方式，用于将各方之间的信息安全地传输为JSON对象。该信息可以通过数字签名进行验证和信任。使用秘密（使用HMAC算法）或使用RSA的公钥/私钥对可以对JWT进行签名。
+
+让我们进一步解释这个定义的一些概念。
+
+    紧凑型：由于其较小的尺寸，JWT可通过URL，POST参数或HTTP标头内发送。另外，较小的尺寸意味着传输速度很快。
+
+    自包含：有效载荷包含有关用户的所有必需信息，避免了多次查询数据库的需要。
+
+什么时候应该使用JSON Web令牌？
+
+以下是JSON Web令牌有用的一些场景：
+
+    验证：这是使用JWT的最常见的场景。一旦用户登录，每个后续请求将包括JWT，允许用户访问该令牌允许的路由，服务和资源。单点登录是一个广泛使用JWT的功能，因为它的开销很小，并且能够在不同的域中轻松使用。
+
+    信息交换：JSON Web令牌是在各方之间安全传输信息的好方法。因为JWT可以被签名，例如使用公钥/私钥对，你可以确定发件人是他们说的是谁。另外，当使用标题和有效载荷计算签名时，还可以验证内容是否未被篡改。
+
+什么是JSON Web令牌结构？
+
+JSON Web令牌由三个部分组成，分别由点（。）组成，分别为：
+
+    头
+    有效载荷
+    签名
+
+因此，JWT通常如下所示。
+
+xxxxx.yyyyy.zzzzz
+
+让我们分解不同的部分。
+头
+
+标题通常由两部分组成：令牌的类型，即JWT，以及使用的哈希算法，如HMAC SHA256或RSA。
+
+例如：
+
+{
+  “alg”：“HS256”，
+  “typ”：“JWT”
+}
+
+然后，这个JSON是Base64Url编码形成JWT的第一部分。
+有效载荷
+
+令牌的第二部分是包含权利要求的有效载荷。声明是关于实体（通常是用户）和附加元数据的声明。有三种类型的索赔：保留，公开和私人声明。
+
+    保留的索赔：这些是一组预先确定的声明，不是强制性的，而是建议的，以提供一组有用的，可互操作的声明。其中一些是：发行人（issuer），exp（到期时间），sub（subject），aud（观众）等。
+
+        请注意，声明名称只有三个字符长，因为JWT意味着紧凑。
+
+    公开声明：这些可以由使用JWT的用户定义。但为避免冲突，应在IANA JSON Web令牌注册表中定义它们，或者将其定义为包含防冲突命名空间的URI。
+
+    私人声明：这些是为了在同意使用它们的各方之间共享信息而创建的自定义声明。
+
+有效载荷的一个例子可以是：
+
+{
+  “sub”：“1234567890”，
+  “名字”：“约翰·多伊”，
+  “admin”：true
+}
+
+然后将有效负载Base64Url编码为JSON Web令牌的第二部分。
+签名
+
+要创建签名部分，您必须使用编码头，编码的有效内容，秘密，标题中指定的算法，并签名。
+
+例如，如果要使用HMAC SHA256算法，将以以下方式创建签名：
+
+HMACSHA256（
+  base64UrlEncode（header）+“。” +
+  base64UrlEncode（有效载荷），
+  秘密）
+
+签名用于验证JWT的发件人是谁说的，并确保该消息没有改变。
+放在一起
+
+输出是三个Base64字符串，以点分隔，可以轻松地在HTML和HTTP环境中传递，而与基于XML的标准（如SAML）相比，它们更紧凑。
+
+下面显示了一个JWT，它具有前一个标题和有效负载编码，并且使用秘密进行签名。编码JWT
+
+如果要使用JWT并将这些概念付诸实践，可以使用jwt.io Debugger对JWT进行解码，验证和生成。
+
+JWT.IO调试器
+JSON Web代码如何工作？
+
+在身份验证中，当用户使用其凭据成功登录时，将返回JSON Web令牌，并且必须在本地保存（通常在本地存储中，但也可以使用Cookie），而不是传统的方法来创建会话服务器并返回一个cookie。
+
+每当用户想要访问受保护的路由或资源时，用户代理应该发送JWT，通常在授权头中使用承载模式。标题的内容应如下所示：
+
+授权：承载<token>
+
+这是一种无状态的认证机制，因为用户状态永远不会保存在服务器内存中。服务器的受保护路由将在Authoriza中检查有效的JWT
+
+
+
+
+
+
+
+
+
 What is JSON Web Token?
 
 JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
