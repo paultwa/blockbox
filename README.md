@@ -15,6 +15,8 @@ https://github.com/TykTechnologies/tyk/issues/170
 5. goto http:// my-awesome-portal.com:3000 and login using bootstrap user+pass
 
 
+
+/////////////////////////////////////////////////////////////////////
 paul
 
 twa
@@ -26,7 +28,7 @@ test123
 Access Credentials d256625d897c46075f558c88102bb2cc
 
 RPC Credentials 5976f423af9755027c166b04
-
+/////////////////////////////////////////////////////////////////
 
 学习Tyk API
 
@@ -36,7 +38,7 @@ RPC Credentials 5976f423af9755027c166b04
 
 更好更快地了解tyk API的功能细节。封装tyk API，我们可以定制dashboard 服务网关管理平台。
 
-
+//////////////////////////////////////////////////////////////////////////////
 
 
 
