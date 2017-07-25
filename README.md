@@ -4,11 +4,15 @@ Credentials are incorrect, please try again   tyk dashboard login
 
 https://github.com/TykTechnologies/tyk/issues/170
 
-update the /etc/hosts/ with 127.0.0.1 my-awesome-portal.com both INSIDE and OUTSIDE the vagrant
-sudo /opt/tyk-dashboard/install/setup.sh domain=my-awesome-portal.com
-restart both gateway and dashboard service
-sudo /opt/tyk-dashboard/install/bootstrap.sh my-awesome-portal.com
-goto http:// my-awesome-portal.com:3000 and login using bootstrap user+pass
+1. update the /etc/hosts/ with 127.0.0.1 my-awesome-portal.com both INSIDE and OUTSIDE the vagrant
+
+2. sudo /opt/tyk-dashboard/install/setup.sh domain=my-awesome-portal.com
+
+3. restart both gateway and dashboard service
+
+4. sudo /opt/tyk-dashboard/install/bootstrap.sh my-awesome-portal.com
+
+5. goto http:// my-awesome-portal.com:3000 and login using bootstrap user+pass
 
 
 
