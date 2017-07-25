@@ -4,6 +4,17 @@ Credentials are incorrect, please try again   tyk dashboard login
 
 https://github.com/TykTechnologies/tyk/issues/170
 
+update the /etc/hosts/ with 127.0.0.1 my-awesome-portal.com both INSIDE and OUTSIDE the vagrant
+sudo /opt/tyk-dashboard/install/setup.sh domain=my-awesome-portal.com
+restart both gateway and dashboard service
+sudo /opt/tyk-dashboard/install/bootstrap.sh my-awesome-portal.com
+goto http:// my-awesome-portal.com:3000 and login using bootstrap user+pass
+
+
+
+
+
+
 
 这是一种无状态的认证机制，因为用户状态永远不会保存在服务器内存中。 服务器的受保护路由将在授权头中检查有效的JWT，如果存在，则允许用户访问受保护的资源。 由于JWT是独立的，所有必要的信息都在那里，减少了多次查询数据库的需要。
 
