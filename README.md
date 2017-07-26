@@ -1,12 +1,28 @@
 # blockbox
 
+This is your annual notice that all registered domain names must have accurate and up-to-date contact information.
+
+Please review the domain information below and verify its accuracy. If all information is up-to-date then no changes are necessary. Inaccurate or outdated information must be corrected by logging into your account.
+
+While we do respect your privacy, we are required by ICANN, our regulating authority, to send these notices annually to all domain contacts. To learn more about this process and why it is required, please visit ICANN’s website: http://www.icann.org/whois/wdrp-registrant-faq.htm
+
+Please remember that under the terms of your registration agreement, providing false or inaccurate Whois (contact) information can be grounds for the cancellation of your domain name registration.
+
+Domains names for review as of August 1 thru August 31
+
+
+
 ubuntu14.04  install tomcat7
+
 https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get
+
 https://askubuntu.com/questions/154953/specify-jdk-for-tomcat7
+
 ttps://www.digitalocean.com/community/tutorials/how-to-optimize-your-tomcat-installation-on-ubuntu-14-04
 
 
 ubuntu14.04  install jdk8
+
 https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get
 
 
