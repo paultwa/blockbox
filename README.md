@@ -1,5 +1,11 @@
 # blockbox
 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get
+
+
+////////////////////////////////////////////////////////////////////////////
+
 Credentials are incorrect, please try again   tyk dashboard login
 
 https://github.com/TykTechnologies/tyk/issues/170
