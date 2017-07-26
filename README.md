@@ -1,6 +1,12 @@
 # blockbox
 
+ubuntu14.04  install tomcat7
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-ubuntu-14-04-via-apt-get
+https://askubuntu.com/questions/154953/specify-jdk-for-tomcat7
+ttps://www.digitalocean.com/community/tutorials/how-to-optimize-your-tomcat-installation-on-ubuntu-14-04
 
+
+ubuntu14.04  install jdk8
 https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get
 
 
