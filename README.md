@@ -25,9 +25,15 @@ description "Tomcat Server"
     rm -rf $CATALINA_HOME/temp/*
   end script
 
+
+
+/////////////////////////////////////////////////////////////
+
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-14-04
+
 wget http://mirror.sdunix.com/apache/tomcat/tomcat-8/v8.0.23/bin/apache-tomcat-8.0.23.tar.gz
 
-
+////////////////////////////////////////////////////////////////////
 
 java.lang.NoClassDefFoundError: javax/websocket/Endpoint
 
@@ -42,7 +48,7 @@ Please remember that under the terms of your registration agreement, providing f
 
 Domains names for review as of August 1 thru August 31
 
-
+///////////////////////////////////////////////////////////////////////////////////////
 
 ubuntu14.04  install tomcat7
 
