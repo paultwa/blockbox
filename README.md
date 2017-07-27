@@ -1,5 +1,25 @@
 # blockbox
 
+
+
+#./mongod --dbpath=/web/webshare/mongodb-master/data --logpath=/web/webshare/mongodb-master/logs/mongodb.log --port 27017 --fork --replSet esb/192.168.6.130:27017 --maxConns=2000 --logappend --nojournal
+
+#./mongod --dbpath=/web/webshare/mongodb-slave/data --logpath=/web/webshare/mongodb-slave/logs/mongodb.log --port 27018 --fork --replSet esb/192.168.6.130:27018 --maxConns=2000 --logappend --nojournal
+
+#./mongod --dbpath=/web/webshare/mongodb-arbiter/data --logpath=/web/webshare/mongodb-arbiter/logs/mongodb.log --port 27019 --fork --replSet esb/192.168.6.130:27017,esb/192.168.6.130:27018 --logappend
+
+#./mongo
+
+#use admin
+
+#db.runCommand({"replSetInitiate":{ "_id":"esb", "members":[ { "_id":0, "host":"192.168.6.129:27017" }, { "_id":1, "host":"192.168.6.129:27018" } ]}});
+
+#rs.addArb("192.168.6.129:27019");
+
+
+///////////////////////////////////////////////////////////////////
+
+
 sudo update-alternatives --config java
 
 sudo update-alternatives --config javac
