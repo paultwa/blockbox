@@ -1,5 +1,10 @@
 # blockbox
 
+mongodb 命令
+http://www.cnblogs.com/liyonghui/p/mongodb.html
+
+https://docs.mongodb.com/manual/reference/mongo-shell/
+
 
 mongo 部署的问题
 
