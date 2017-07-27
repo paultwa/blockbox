@@ -1,5 +1,7 @@
 # blockbox
 
+./catalina.sh:1:eval: usr/lib/jvm/java-7-openjdk-amd64/bin/java:not found
+
 TypeError: Cannot read property 'version' of null at src/mongo/shell/utils.js:1008
 
 cfg={_id:"esb",members:[{_id:0,host:'192.168.6.130:27017',priority:10},{_id:1,host:'192.168.6.130:27018',priority:1},{_id:2,host:'192.168.6.130:27019',arbiterOnly:true}]}
