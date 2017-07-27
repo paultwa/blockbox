@@ -1,5 +1,8 @@
 # blockbox
 
+java.lang.NoClassDefFoundError: javax/websocket/Endpoint
+
+
 This is your annual notice that all registered domain names must have accurate and up-to-date contact information.
 
 Please review the domain information below and verify its accuracy. If all information is up-to-date then no changes are necessary. Inaccurate or outdated information must be corrected by logging into your account.
