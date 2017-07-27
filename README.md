@@ -1,6 +1,17 @@
 # blockbox
 
 
+mongo 部署的问题
+
+http://stackoverflow.com/questions/39426821/error-while-creating-replica-set-mongodb
+
+http://www.alexyu.se/content/2012/04/mongodb-quick-start-replica-sets-and-sharding
+
+mongo  sharding 分片
+https://docs.mongodb.com/manual/sharding/ 
+
+
+
 
 #./mongod --dbpath=/web/webshare/mongodb-master/data --logpath=/web/webshare/mongodb-master/logs/mongodb.log --port 27017 --fork --replSet esb/192.168.6.130:27017 --maxConns=2000 --logappend --nojournal
 
