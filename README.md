@@ -1,5 +1,8 @@
 # blockbox
 
+cfg={_id:"esb",members:[{_id:0,host:'192.168.6.130:27017',priority:10},{_id:1,host:'192.168.6.130:27018',priority:1},{_id:2,host:'192.168.6.130:27019',arbiterOnly:true}]}
+rs.reconfig(cfg,{force:true})
+
 mongodb 命令
 http://www.cnblogs.com/liyonghui/p/mongodb.html
 
