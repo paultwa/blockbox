@@ -1,6 +1,13 @@
 # blockbox
 
 
+
+https://tyk.io/blog/ip-rate-limiter-middleware/
+
+
+
+
+
 Creating an IP-based rate-limiter with Tyk and JavaScript middleware
 
 We’ve recently had a user ask if it was possible to have Tyk act as a rate limiter based on IP address instead of by token, this isn’t possible out of the box, but it is with our Middleware API and some simple JS So, you may ask yourself how we achieve this feat?
