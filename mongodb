@@ -9,3 +9,15 @@ mongodb2 PK mongodb3
   auth  zip cluster 
 http://www.mongoing.com/archives/3700
 
+
+Redis 2.8.4 
+
+Redis3.0 引入了集群这个特性，Redis集群是一个分布式（distributed）、容错（fault-tolerant）的 Redis内存K/V服务
+
+redis-4.0.1   http://redis.io/downloads
+
+
+
+
+
+
