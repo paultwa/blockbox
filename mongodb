@@ -2,5 +2,10 @@
 mongo -version 
 MongoDB shell version : 3.0.15
 
-cluster
+mongodb3 cluster
 http://www.cnblogs.com/ljai/p/4898475.html
+
+mongodb2 PK mongodb3 
+  auth  zip cluster 
+http://www.mongoing.com/archives/3700
+
