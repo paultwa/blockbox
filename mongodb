@@ -13,6 +13,9 @@ https://github.com/hyperledger-archives/fabric/blob/master/docs/tech/attributes.
 https://github.com/hyperledger-archives/fabric/blob/master/docs/API/MemberServicesAPI.md
 
 
+https://github.com/hyperledger/fabric-sdk-java/tree/master/src/main/java/org/hyperledger/fabric/sdk
+
+
 
 
 mongo -version 
