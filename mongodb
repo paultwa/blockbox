@@ -6,6 +6,13 @@ http://hyperledger-fabric.readthedocs.io/en/latest/
 
 https://github.com/hyperledger-archives/fabric/blob/master/sdk/node/src/hfc.ts
 
+https://github.com/hyperledger/fabric/blob/master/core/chaincode/shim/chaincode.go
+
+https://github.com/hyperledger-archives/fabric/blob/master/docs/tech/attributes.md
+
+https://github.com/hyperledger-archives/fabric/blob/master/docs/API/MemberServicesAPI.md
+
+
 
 
 mongo -version 
