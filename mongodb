@@ -1,4 +1,15 @@
 
+onclientconnectionstate() - status=133
+http://www.loverobots.cn/android-ble-connection-solution-bluetoothgatt-status-133.html
+
+https://stackoverflow.com/questions/25895347/android-bluetooth-status-133-in-gatt-readcharacteristic
+https://stackoverflow.com/questions/25330938/android-bluetoothgatt-status-133-register-callback
+
+https://stackoverflow.com/questions/39646253/android-stops-finding-ble-devices-onclientregistered-status-133-clientif-0
+
+https://stackoverflow.com/questions/20069507/gatt-callback-fails-to-register
+
+
 BtGatt.GattService: DUMP BEGIN
 
 
