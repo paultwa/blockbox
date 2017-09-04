@@ -51,6 +51,7 @@ sudo /etc/init.d/networking restart 记得重新启动一个网络服务
 
 3. docker&docker compose
 https://docs.docker.com/engine/installation/linux/ubuntu/
+http://www.cnblogs.com/ksir16/p/6530433.html
 
 4. nodejs 后期开发工具　
 https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
