@@ -79,6 +79,17 @@ docker pull hyperledger/fabric-ccenv:x86_64-1.0.2
 docker pull hyperledger/fabric-javaenv:x86_64-1.0.2
 /////////////////////////////////////////////////////////////////
 
+docker tag hyperledger/fabric-orderer:x86_64-1.0.2 hyperledger/fabric-orderer:latest
+docker tag hyperledger/fabric-peer:x86_64-1.0.2  hyperledger/fabric-peer:latest
+docker tag hyperledger/fabric-zookeeper:x86_64-1.0.2 hyperledger/fabric-zookeeper:latest
+docker tag hyperledger/fabric-couchdb:x86_64-1.0.2 hyperledger/fabric-couchdb:latest
+docker tag hyperledger/fabric-kafka:x86_64-1.0.2 hyperledger/fabric-kafka:latest
+docker tag hyperledger/fabric-ca:x86_64-1.0.2 hyperledger/fabric-ca:latest
+docker tag hyperledger/fabric-ccenv:x86_64-1.0.2 hyperledger/fabric-ccenv:latest
+docker tag hyperledger/fabric-javaenv:x86_64-1.0.2 hyperledger/fabric-javaenv:latest
+
+docker pull hyperledger/fabric-tools:x86_64-1.0.2
+docker tag hyperledger/fabric-tools:x86_64-1.0.2 hyperledger/fabric-tools:latest
 
 ////////////////////////////搭建 fabricV1.0 beta 网络//////// 
 1. 首先从github 中拉取fabric 最新源码(v1.0 beta)  注意：下载之前请确定GOPATH 已经设置好
