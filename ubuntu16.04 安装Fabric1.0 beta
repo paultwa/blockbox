@@ -69,6 +69,15 @@ docker pull hyperledger/fabric-ca:x86_64-1.0.0-betacd
 docker pull hyperledger/fabric-ccenv:x86_64-1.0.0-beta
 docker pull hyperledger/fabric-javaenv:x86_64-1.0.0-beta
 /////////////////////////////////////////////////////////////////////////////
+docker pull hyperledger/fabric-orderer:x86_64-1.0.1
+docker pull hyperledger/fabric-peer:x86_64-1.0.1
+docker pull hyperledger/fabric-zookeeper:x86_64-1.0.1
+docker pull hyperledger/fabric-couchdb:x86_64-1.0.1
+docker pull hyperledger/fabric-kafka:x86_64-1.0.1
+docker pull hyperledger/fabric-ca:x86_64-1.0.1
+docker pull hyperledger/fabric-ccenv:x86_64-1.0.1
+docker pull hyperledger/fabric-javaenv:x86_64-1.0.1
+/////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////搭建 fabricV1.0 beta 网络//////// 
