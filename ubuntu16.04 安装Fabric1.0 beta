@@ -104,6 +104,7 @@ cd $GOPATH/src/github.com/hyperledger/fabric
 
 其他安装文档
 http://www.cnblogs.com/studyzy/p/7437157.html
+https://domsteil.com/2017/04/22/how-to-setup-hyperledger-fabric-v1-0-on-aws/
 
 
 
