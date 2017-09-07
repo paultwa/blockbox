@@ -94,6 +94,7 @@ docker tag hyperledger/fabric-tools:x86_64-1.0.2 hyperledger/fabric-tools:latest
 ////////////////////////////搭建 fabricV1.0 beta 网络//////// 
 1. 首先从github 中拉取fabric 最新源码(v1.0 beta)  注意：下载之前请确定GOPATH 已经设置好
 git clone https://github.com/hyperledger/fabric.git
+git clone https://github.com/hyperledger/fabric-ca.git
 
 
 执行下面的命令，搭建一个fabricV1.0 beta 网络，包括：6 个docker image，其中包含4 个peer 节点（peer0，peer1，peer2，
